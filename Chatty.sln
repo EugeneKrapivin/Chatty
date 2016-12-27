@@ -14,6 +14,12 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Chatty.Server", "src\Chatty
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Chatty.Client", "src\Chatty.Client\Chatty.Client.xproj", "{E49D6A7F-3708-462D-BE2C-9F905657E46E}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Chatty.Models", "src\Chatty.Models\Chatty.Models.xproj", "{F483545B-1722-4382-A6C1-D0CBA00E10A7}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Chatty.GrainInterfaces", "src\Chatty.GrainInterfaces\Chatty.GrainInterfaces.xproj", "{12F07586-8CD2-4362-9C93-D895E3381279}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Chatty.Grains", "src\Chatty.Grains\Chatty.Grains.xproj", "{16465B89-61A2-4640-AAC6-0695CA2F328E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +34,18 @@ Global
 		{E49D6A7F-3708-462D-BE2C-9F905657E46E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E49D6A7F-3708-462D-BE2C-9F905657E46E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E49D6A7F-3708-462D-BE2C-9F905657E46E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F483545B-1722-4382-A6C1-D0CBA00E10A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F483545B-1722-4382-A6C1-D0CBA00E10A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F483545B-1722-4382-A6C1-D0CBA00E10A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F483545B-1722-4382-A6C1-D0CBA00E10A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12F07586-8CD2-4362-9C93-D895E3381279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F07586-8CD2-4362-9C93-D895E3381279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F07586-8CD2-4362-9C93-D895E3381279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F07586-8CD2-4362-9C93-D895E3381279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16465B89-61A2-4640-AAC6-0695CA2F328E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16465B89-61A2-4640-AAC6-0695CA2F328E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16465B89-61A2-4640-AAC6-0695CA2F328E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16465B89-61A2-4640-AAC6-0695CA2F328E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,5 +53,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6DD31562-8DF9-4881-98BD-6169DAC4E058} = {44EC3237-F720-428B-BE65-324E5D068C67}
 		{E49D6A7F-3708-462D-BE2C-9F905657E46E} = {44EC3237-F720-428B-BE65-324E5D068C67}
+		{F483545B-1722-4382-A6C1-D0CBA00E10A7} = {44EC3237-F720-428B-BE65-324E5D068C67}
+		{12F07586-8CD2-4362-9C93-D895E3381279} = {44EC3237-F720-428B-BE65-324E5D068C67}
+		{16465B89-61A2-4640-AAC6-0695CA2F328E} = {44EC3237-F720-428B-BE65-324E5D068C67}
 	EndGlobalSection
 EndGlobal

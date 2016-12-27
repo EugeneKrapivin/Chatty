@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
+using Chatty.GrainInterfaces;
+using Chatty.Models;
 using Orleans;
 using Orleans.Runtime;
 using Orleans.Runtime.Configuration;
@@ -17,6 +20,8 @@ namespace Chatty.Client
             try
             {
                 InitializeWithRetries(config, initializeAttemptsBeforeFailing: 5);
+                var machineKey = Guid.NewGuid();
+                new Program().MainAsync().Wait();
             }
             catch (Exception ex)
             {
@@ -51,6 +56,36 @@ namespace Chatty.Client
                         throw;
                     }
                     Thread.Sleep(TimeSpan.FromSeconds(2));
+                }
+            }
+        }
+
+        private async Task MainAsync(string serverName = "local")
+        {
+            var username = "nocgod";
+
+            var server = GrainClient.GrainFactory.GetGrain<IServerGrain>(serverName);
+            Console.WriteLine($"Registering with server {serverName} using {username} as username...");
+            UserRegistery user;
+            do
+            {
+                Console.Write("Please enter your wanted username: ");
+                username = Console.ReadLine();
+                user = await server.RegisterUserAsync(username);
+                if (user == null)
+                {
+                    Console.WriteLine("Username already taken");
+                }
+            } while (user == null);
+
+
+            Console.WriteLine($"Logging in to server...");
+            if (await server.LogToServerAsync(user.UserToken, user.Username))
+            {
+                var rooms = await server.GetRoomsAsync();
+                foreach (var room in rooms)
+                {
+                    Console.WriteLine(room);
                 }
             }
         }
